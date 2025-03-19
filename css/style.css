@@ -96,9 +96,20 @@ ul {
 
 
 /* SIDEBAR */
+#sidebar {
+  color: #717171;
+}
+
+#sidebar .home, 
+#sidebar .playlist h4 {
+  color: white;
+}
+
 #sidebar img {
   height: 40px;
   width: 40px;
+
+  vertical-align: middle;
 }
 
 #sidebar .sidebar-user .download img {
@@ -106,37 +117,77 @@ ul {
   width: 30px;
 }
 
-#sidebar .spotify-logo i {
-  color: #FFFFFF;
+#sidebar .sidebar-menu div {
+  margin: 10px 0;
 }
 
-#sidebar .sidebar-menu img {
-  margin: 10px;
+#sidebar .sidebar-user div {
+  margin: 20px 0;
+  padding: 5px;
 }
 
-#sidebar .sidebar-user img {
-  padding: 20px;
-}
-
-#sidebar .user-account {
-  border: 1px solid grey;
+#sidebar .user-account img {
+  border: 1px solid #a3a3a3;
   border-radius: 50%;
-  background-color: grey;
+  background-color: #a3a3a3;
 }
 
-/* #sidebar .sidebar-user * {
-  padding: 10px;
-} */
 
 
 
-
-/* @MEDIA SCREEN */
+      /* @MEDIA SCREEN */
 
 @media screen and (min-width: 576px) {
   :root {
     --sidebar-width: 250px
   }
+
+         /* sidebar */
+#sidebar {
+  align-items: flex-start;
+}
+#sidebar .hidden {
+  display: inline;
+
+  padding-left: 10px;
+}
+
+#sidebar .hidden-logo {
+  display: none;
+
+  padding-left: 10px;
+}
+
+#sidebar .sidebar-menu .home {
+  border-left: 5px solid #A2EF2C;
+}
+
+#sidebar i {
+  font-size: 25px;
+  border: 1px solid #a3a3a3;
+  background-color: #a3a3a3;
+  color: black;
+  padding: 10px;
+}
+
+#sidebar li {
+  margin: 20px 0;
+}
+
+#sidebar .sidebar-user .download {
+  border-bottom: 1px solid #a3a3a3;
+}
+
+#sidebar .sidebar-menu div,
+#sidebar .sidebar-menu h4,
+#sidebar .sidebar-menu ul {
+  padding: 0 20px;
+}
+
+#sidebar .sidebar-user div {
+margin: 20px;
+}
+
 }
 
 
