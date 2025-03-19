@@ -132,10 +132,24 @@ ul {
   background-color: #a3a3a3;
 }
 
+/* MAIN HEADER */
+#main-content-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#main-content .main-content-header-button {
+  color: white;
+  border: 1px solid white;
+  background-color: #080B12;
+  border-radius: 20px / 50%;
+  padding: 10px 30px;
+}
 
 
 
-      /* @MEDIA SCREEN */
+      /*.......... @MEDIA SCREEN ............*/
 
 @media screen and (min-width: 576px) {
   :root {
