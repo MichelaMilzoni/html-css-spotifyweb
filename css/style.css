@@ -192,19 +192,23 @@ margin: 20px;
 /* hover */
 .selection-menu:hover img {
   filter: brightness(0) invert(1); /* Cambia il colore dell'immagine a bianco */
+  cursor: pointer;
 }
 
 .selection-menu:hover span {
   color: white; /* Cambia il colore del testo a bianco */
+  cursor: pointer;
 }
 
 .selection-menu:hover {
   color: white; /* Cambia il colore del testo a bianco */
+  cursor: pointer;
 }
 
 #sidebar li:hover i {
   background-color: white;
   color: black;
+  cursor: pointer;
 }
 
 }
