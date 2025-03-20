@@ -171,30 +171,91 @@ ul {
   display: flex;;
   justify-content: space-between;
   align-items: center;
+
+  color: white;
+}
+
+#player .album *,
+#player .volume *:not(.volume-bar),
+#player .play {
+  margin: 0 5px;
 }
 
 #player .album *,
 #player .volume * {
-  display: inline;
+  display: inline-block;
+}
 
+
+#player .album img {
+  height: 40px;
+  vertical-align: middle;
 }
 
 #player .play {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 0 auto;
+}
+
+#player .play i {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+#player .play .fa-play {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 #player .key {
   margin-bottom: 10px;
 }
 
-#player .playing * {
-  display: inline-block;
+#player .playing {
+  display: flex;
   vertical-align: middle;
-  margin-right: 10px;
+  flex: 0 1 auto;
+  align-items: center;
 }
 
+.playing-bar-progress,
+.volume-bar-progress {
+  height: 10px; /* Altezza della barra */
+  background-color: #444; /* Grigio scuro */
+  border-radius: 10px; /* Angoli arrotondati */
+  position: relative; /* Necessario per posizionare la barra chiara */
+  overflow: hidden; /* Opzionale: evita che il contenuto esca dai bordi */
+}
+
+.playing-bar,
+.volume-bar {
+  height: 100%;
+  background-color: #aaa; /* Grigio chiaro */
+  border-radius: 10px 0 0 10px; /* Arrotonda solo il lato sinistro */
+  position: absolute; /* Assicurati che si sovrapponga alla barra di sfondo */
+  top: 0;
+  left: 0;
+}
+
+.playing-bar-progress {
+  width: 200px;
+  margin: 5px 30px;
+}
+
+.playing-bar {
+  width: 25%; /* Percentuale completata (modifica questa proprietà dinamicamente) */
+}
+
+.volume-bar-progress {
+  width: 150px;
+}
+
+.volume-bar {
+  width: 25%; /* Percentuale completata (modifica questa proprietà dinamicamente) */
+}
 
 
 
