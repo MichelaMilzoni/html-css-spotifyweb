@@ -22,6 +22,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 ul {
@@ -74,7 +75,7 @@ ul {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   overflow: auto;
@@ -112,24 +113,37 @@ ul {
   vertical-align: middle;
 }
 
-#sidebar .sidebar-user .download img {
-  height: 30px;
-  width: 30px;
+#sidebar .hidden-logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-#sidebar .sidebar-menu div {
+#sidebar .sidebar-user {
+  margin-top: auto;
+}
+
+#sidebar .sidebar-user .download img {
+  height: 40px;
+  width: 40px;
+
+  overflow: hidden;
+}
+
+#sidebar .sidebar-menu a {
+  display: block;
   margin: 10px 0;
 }
 
 #sidebar .sidebar-user div {
   margin: 20px 0;
-  padding: 5px;
+  padding-bottom: 20px;
 }
 
 #sidebar .user-account img {
   border: 1px solid #a3a3a3;
   border-radius: 50%;
   background-color: #a3a3a3;
+  overflow: hidden;
 }
 
 /* MAIN HEADER */
@@ -152,25 +166,38 @@ ul {
       /*.......... @MEDIA SCREEN ............*/
 
 @media screen and (min-width: 576px) {
-  :root {
-    --sidebar-width: 250px
-  }
+:root {
+  --sidebar-width: 250px
+}
 
          /* sidebar */
 #sidebar {
   align-items: flex-start;
 }
+
+#sidebar .spotify-logo {
+  align-self: center;
+}
+
+#sidebar .sidebar-menu a {
+  margin: 10px 0;
+  padding-left: 10px;
+  width: 100%;
+}
+
 #sidebar .hidden {
   display: inline;
-
-  width: 150px;
   margin: 20px 0;
+  width: auto;
 }
 
 #sidebar .hidden-logo {
   display: none;
 
   padding-left: 10px;
+  vertical-align: middle;
+  height: 40px;
+  width: auto;
 }
 
 #sidebar .sidebar-menu .home {
@@ -193,10 +220,8 @@ ul {
   border-bottom: 1px solid #a3a3a3;
 }
 
-#sidebar .sidebar-menu div,
-#sidebar .sidebar-menu h4,
-#sidebar .sidebar-menu ul {
-  padding: 0 20px;
+#sidebar .playlist {
+  padding: 10px 20px;
 }
 
 #sidebar .sidebar-user div {
@@ -226,7 +251,6 @@ margin: 20px;
 }
 
 }
-
 
 @media screen and (min-width: 768px) {
   :root {
