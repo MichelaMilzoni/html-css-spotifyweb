@@ -134,8 +134,9 @@ ul {
   margin: 10px 0;
 }
 
-#sidebar .playlist ul {
-  overflow: hidden;
+#sidebar .playlist {
+  width: 100%;
+  overflow: auto;
 }
 
 #sidebar .sidebar-user div {
@@ -168,28 +169,48 @@ ul {
 
 /* FOOTER */
 #player {
-  display: flex;;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
   color: white;
 }
 
-#player .album *,
-#player .volume *:not(.volume-bar),
+#player .album,
+#player .volume {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#player .album .album-img,
+#player .album .album-icon {
+  margin: 5px;
+}
+
+
+#player .album,
+#player .volume {
+  width: 30%;
+}
+
 #player .play {
-  margin: 0 5px;
-}
-
-#player .album *,
-#player .volume * {
-  display: inline-block;
+  width: 40%;
 }
 
 
-#player .album img {
-  height: 40px;
+#player .album-img img {
+  max-width: 60px;
   vertical-align: middle;
+}
+
+#player .album-img,
+#player .album-info {
+  flex: 1 1 40%;
+}
+
+#player .album-icon {
+  flex: 1 1 20%;
 }
 
 #player .play {
@@ -212,6 +233,7 @@ ul {
 
 #player .key {
   margin-bottom: 10px;
+  max-width: 100%;
 }
 
 #player .playing {
@@ -219,6 +241,8 @@ ul {
   vertical-align: middle;
   flex: 0 1 auto;
   align-items: center;
+
+  max-width: 100%;
 }
 
 .playing-bar-progress,
@@ -241,7 +265,7 @@ ul {
 }
 
 .playing-bar-progress {
-  width: 200px;
+  width: 150px;
   margin: 5px 30px;
 }
 
@@ -250,7 +274,7 @@ ul {
 }
 
 .volume-bar-progress {
-  width: 150px;
+  width: 100px;
 }
 
 .volume-bar {
@@ -344,6 +368,10 @@ margin: 20px;
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+#player .play {
+  width: 50%;
 }
 
 }
