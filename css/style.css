@@ -134,6 +134,10 @@ ul {
   margin: 10px 0;
 }
 
+#sidebar .playlist ul {
+  overflow: hidden;
+}
+
 #sidebar .sidebar-user div {
   margin: 20px 0;
   padding-bottom: 20px;
@@ -160,6 +164,37 @@ ul {
   border-radius: 20px / 50%;
   padding: 10px 30px;
 }
+
+
+/* FOOTER */
+#player {
+  display: flex;;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#player .album *,
+#player .volume * {
+  display: inline;
+
+}
+
+#player .play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#player .key {
+  margin-bottom: 10px;
+}
+
+#player .playing * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 
 
 
