@@ -179,25 +179,16 @@ ul {
 #player .album,
 #player .volume {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+
+  width: 30%;
 }
 
 #player .album .album-img,
 #player .album .album-icon {
   margin: 5px;
 }
-
-
-#player .album,
-#player .volume {
-  width: 30%;
-}
-
-#player .play {
-  width: 40%;
-}
-
 
 #player .album-img img {
   max-width: 60px;
@@ -218,6 +209,8 @@ ul {
   flex-direction: column;
   align-items: center;
   flex: 1 0 auto;
+
+  width: 40%;
 }
 
 #player .play i {
@@ -273,8 +266,25 @@ ul {
   width: 25%; /* Percentuale completata (modifica questa proprietà dinamicamente) */
 }
 
+#player .volume .fa-list,
+#player .volume .fa-display {
+  width: 20%;
+}
+
+#player .bar-volume {
+  width: 60%;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#player .bar-volume i {
+  padding-right: 10px;
+}
+
 .volume-bar-progress {
-  width: 100px;
+  width: 90%;
 }
 
 .volume-bar {
