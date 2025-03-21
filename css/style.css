@@ -41,7 +41,7 @@ ul {
 }
 
 .container {
-    max-width: 1100px; /* Larghezza massima */
+    max-width: 100%; /* Larghezza massima */
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -55,6 +55,8 @@ ul {
   
     margin-left: -1rem;
     margin-right: -1rem;
+
+    width: 100%;
   }
   
   [class*='col'] {
@@ -86,7 +88,7 @@ ul {
     margin-bottom: 2.5rem;
 
     color: #717171;
-    font-size: 10px;
+    font-size: 1rem;
   }
   
   .hidden {
@@ -283,11 +285,7 @@ ul {
   width: 30px;
 }
 
-/* MAIN CONTENT - RECENTLY PLAYED */
-#content .content-recently-played .row {
-  width: 100%;
-}
-
+/* MAIN CONTENT - RECENTLY PLAYED + CREATED FOR YOU + POPULAR ARTISTS */
 #content .row {
   align-items: flex-start;
   margin-left: 0;
@@ -337,9 +335,14 @@ ul {
   text-overflow: ellipsis; /* Aggiunge "..." se il testo è troppo lungo */
 }
 
+#content .content-popular-artists .card-img-container {
+  border-radius: 50%;
+}
+
 /* main content - recently played:hover */
 #content .card-img-container:hover .overlay {
   opacity: 1; /* Mostra l'overlay quando l'immagine è in hover */
+  cursor: pointer;
 }
 
 
@@ -561,8 +564,7 @@ margin: 20px;
    #content .col {
     width: calc(100% / 4);
   }
-  
-  
+
   
   /* footer */
   #player .key {
