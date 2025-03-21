@@ -48,6 +48,47 @@ ul {
     padding-right: 1rem;
   }
 
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  
+  [class*='col'] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* colonna 1/2 */
+  .col {
+    width: calc(100% / 2);
+  }
+
+  .col-100 {
+    width: 100%;
+  }
+
+  .section-title {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    color: white;
+    font-size: 20px;
+
+    text-align: left;
+  }
+
+  .section-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+
+    color: #717171;
+    font-size: 10px;
+  }
+  
   .hidden {
     display: none;
   }
@@ -204,7 +245,7 @@ ul {
   cursor: pointer;
 }
 
-/* MAIN CONTENT */
+/* MAIN CONTENT - LINK*/
 #content .content-link ul {
   display: flex;
   justify-content: center;
@@ -242,8 +283,64 @@ ul {
   width: 30px;
 }
 
+/* MAIN CONTENT - RECENTLY PLAYED */
+#content .content-recently-played .row {
+  width: 100%;
+}
 
+#content .row {
+  align-items: flex-start;
+  margin-left: 0;
+}
 
+#content .row * {
+  color: #717171;
+  text-align: center;
+}
+
+#content .card-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+#content .row img {
+  width: 100%;
+}
+
+#content .row .overlay i {
+  color: white;
+  font-size: 3rem;
+}
+
+#content .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Colore nero trasparente */
+  display: flex; /* Per centrare l'icona */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* L'overlay è nascosto inizialmente */
+}
+
+#content .row h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+#content .row h3 {
+  overflow: hidden; /* Nasconde il contenuto che supera l'altezza */
+  white-space: nowrap; /* Impedisce il testo di andare a capo */
+  text-overflow: ellipsis; /* Aggiunge "..." se il testo è troppo lungo */
+}
+
+/* main content - recently played:hover */
+#content .card-img-container:hover .overlay {
+  opacity: 1; /* Mostra l'overlay quando l'immagine è in hover */
+}
 
 
 
@@ -453,20 +550,37 @@ margin: 20px;
   gap: 1rem;
 }
 
+#content .content-link ul {
+  gap: 2rem;
+}
+
 }
 
 @media screen and (min-width: 768px) {
-    /* footer */
+   /* main content-recently-played */
+   #content .col {
+    width: calc(100% / 4);
+  }
+  
+  
+  
+  /* footer */
   #player .key {
     gap: 1.5rem;
   }
-  
 }
 
 @media screen and (min-width: 992px) {
-   /* footer */
+     /* main content-recently-played */
+     #content .col {
+      width: calc(100% / 6);
+    }
+
+  
+  
+  /* footer */
   #player .key {
     gap: 2rem;
   }
-  
+
 }
