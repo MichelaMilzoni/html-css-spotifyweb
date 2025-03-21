@@ -52,6 +52,20 @@ ul {
     display: none;
   }
 
+ .progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+ .progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background-color: #686868;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
 /* LAYOUT */
 .wrapper {
   width: 100vw;
@@ -62,11 +76,6 @@ ul {
 #top-content {
   height: calc(100vh - var(--player-height));
   display: flex;
-}
-
-#player {
-  height: var(--player-height);
-  background-color: #282828;
 }
 
 #sidebar {
@@ -151,6 +160,28 @@ ul {
   overflow: hidden;
 }
 
+/* sidebar hover */
+.selection-menu:hover img {
+  filter: brightness(0) invert(1); /* Cambia il colore dell'immagine a bianco */
+  cursor: pointer;
+}
+
+.selection-menu:hover span {
+  color: white; /* Cambia il colore del testo a bianco */
+  cursor: pointer;
+}
+
+.selection-menu:hover {
+  color: white; /* Cambia il colore del testo a bianco */
+  cursor: pointer;
+}
+
+#sidebar li:hover i {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 /* MAIN HEADER */
 #main-content-header {
   display: flex;
@@ -164,133 +195,132 @@ ul {
   background-color: #080B12;
   border-radius: 20px / 50%;
   padding: 10px 30px;
+  margin-right: 20px;
 }
 
+/* main header hover */
+#main-content .main-content-header-button:hover {
+  transform: scale(1.2); /* Ingrandisce il pulsante del 20% */
+  cursor: pointer;
+}
 
 /* FOOTER */
 #player {
+  height: var(--player-height);
+  background-color: #282828;
+  color: white;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
 
-  color: white;
+#player .album,
+#player .play,
+#player .volume {
+  flex: 1 1 0px;
+}
+
+#player .album {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#player .album-img-container {
+  flex-shrink: 0;
+}
+
+#player .album-img-cover {
+  max-width: 60px;
+}
+
+#player .album-info {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+#player .album-singer {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  font-size: 0.8rem;
+}
+
+#player .album-song {
+  font-size: 0.7rem;
+  color: #a3a3a3;
 }
 
 #player .album,
 #player .volume {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  width: 30%;
-}
-
-#player .album .album-img,
-#player .album .album-icon {
-  margin: 5px;
-}
-
-#player .album-img img {
-  max-width: 60px;
-  vertical-align: middle;
-}
-
-#player .album-img,
-#player .album-info {
-  flex: 1 1 40%;
-}
-
-#player .album-icon {
-  flex: 1 1 20%;
+  max-width: 250px;
 }
 
 #player .play {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 0 auto;
-
-  width: 40%;
-}
-
-#player .play i {
-  margin: 0 10px;
-  font-size: 20px;
-}
-
-#player .play .fa-play {
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 5px;
+  max-width: 600px;
 }
 
 #player .key {
-  margin-bottom: 10px;
-  max-width: 100%;
-}
-
-#player .playing {
+  font-size: 0.9rem;
   display: flex;
-  vertical-align: middle;
-  flex: 0 1 auto;
-  align-items: center;
-
-  max-width: 100%;
-}
-
-.playing-bar-progress,
-.volume-bar-progress {
-  height: 10px; /* Altezza della barra */
-  background-color: #444; /* Grigio scuro */
-  border-radius: 10px; /* Angoli arrotondati */
-  position: relative; /* Necessario per posizionare la barra chiara */
-  overflow: hidden; /* Opzionale: evita che il contenuto esca dai bordi */
-}
-
-.playing-bar,
-.volume-bar {
-  height: 100%;
-  background-color: #aaa; /* Grigio chiaro */
-  border-radius: 10px 0 0 10px; /* Arrotonda solo il lato sinistro */
-  position: absolute; /* Assicurati che si sovrapponga alla barra di sfondo */
-  top: 0;
-  left: 0;
-}
-
-.playing-bar-progress {
-  width: 150px;
-  margin: 5px 30px;
-}
-
-.playing-bar {
-  width: 25%; /* Percentuale completata (modifica questa proprietà dinamicamente) */
-}
-
-#player .volume .fa-list,
-#player .volume .fa-display {
-  width: 20%;
-}
-
-#player .bar-volume {
-  width: 60%;
-
-  display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-#player .bar-volume i {
-  padding-right: 10px;
+#player .progress-bar {
+  max-width: 70%;
+  min-width: 120px;
 }
 
-.volume-bar-progress {
-  width: 90%;
+#player .progress-bar > .progress {
+  height: 100%;
+  background-color: #b5b5b5;
+  width: 30%;
+  border-radius: 2px;
+
+  position: relative;
 }
 
-.volume-bar {
-  width: 25%; /* Percentuale completata (modifica questa proprietà dinamicamente) */
+#player .progress-bar > .progress > .progress-ball {
+  display: none;
+
+  background-color: white;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(50%); 
 }
 
+/* progress bar hover */
+#player .progress-bar:hover > .progress {
+  background-color: white;
+}
+
+#player .progress-bar:hover > .progress > .progress-ball {
+  display: block;
+}
+
+#player .volume {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#player .volume .progress-bar-container {
+  max-width: 150px;
+  flex-grow: 1;
+}
 
 
       /*.......... @MEDIA SCREEN ............*/
@@ -358,42 +388,37 @@ ul {
 margin: 20px;
 }
 
-/* hover */
-.selection-menu:hover img {
-  filter: brightness(0) invert(1); /* Cambia il colore dell'immagine a bianco */
-  cursor: pointer;
-}
-
-.selection-menu:hover span {
-  color: white; /* Cambia il colore del testo a bianco */
-  cursor: pointer;
-}
-
-.selection-menu:hover {
-  color: white; /* Cambia il colore del testo a bianco */
-  cursor: pointer;
-}
-
-#sidebar li:hover i {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
+/* footer */
 #player .play {
-  width: 50%;
+  flex: 2 1 0px;
+}
+
+#player .key {
+  gap: 1rem;
+}
+
+#player .progress-bar-container {
+  justify-content: center;
+}
+
+#player .volume {
+  gap: 1rem;
 }
 
 }
 
 @media screen and (min-width: 768px) {
-  :root {
-
+    /* footer */
+  #player .key {
+    gap: 1.5rem;
   }
+  
 }
 
 @media screen and (min-width: 992px) {
-  :root {
-
+   /* footer */
+  #player .key {
+    gap: 2rem;
   }
+  
 }

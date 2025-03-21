@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="./css/style.css"> <!-- Collegamento a un file CSS esterno -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
 
+<body>
   <div class="wrapper">
     <div id="top-content">
       <div id="sidebar">
@@ -90,8 +90,8 @@
 
     <div id="player">
       <div class="album">
-        <div class="album-img">
-          <img src="./img/sinister.jpeg" alt="">
+        <div class="album-img-container">
+          <img class="album-img-cover" src="./img/sinister.jpeg" alt="">
         </div>
         <div class="album-info">
           <h4 class="album-singer">Sinister</h4>
@@ -107,31 +107,46 @@
         <div class="key">
           <i class="fa-solid fa-shuffle"></i>
           <i class="fa-solid fa-backward-step"></i>
-          <i class="fa-solid fa-play"></i>
+          <i class="fa-solid fa-circle-play fa-2xl"></i>
           <i class="fa-solid fa-forward-step"></i>
           <i class="fa-solid fa-rotate-right"></i>
         </div>
-        <div class="playing">
-          <p>0:25</p>
-          <div class="playing-bar-progress">
-            <div class="playing-bar"></div>
+        <div class="progress-bar-container">
+          <div>0:25</div>
+          <div class="progress-bar">
+            <div class="progress">
+              <div class="progress-ball"></div>
+            </div>
           </div>
-          <p>4:35</p>
+          <div>4:35</div>
         </div>
       </div>
+
       <div class="volume">
-        <div><i class="fa-solid fa-list"></i></div>
-        <div><i class="fa-solid fa-display"></i></div>
-        <div class="bar-volume">
-          <i class="fa-solid fa-volume-high"></i>
-          <div class="volume-bar-progress">
-            <div class="volume-bar"></div>
+        <div>
+          <i class="fa-solid fa-list"></i>
+        </div>
+        
+        <div>
+          <i class="fa-solid fa-display"></i>
+        </div>
+        
+        <div>
+          <div class="progress-bar-container">
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="progress-bar">
+              <div class="progress">
+                <div class="progress-ball"></div>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
-
-
+    
     </div>
+  
   </div>
+
 </body>
 </html>
