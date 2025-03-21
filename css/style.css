@@ -182,7 +182,7 @@ ul {
   cursor: pointer;
 }
 
-/* MAIN HEADER */
+/* MAIN CONTENT HEADER */
 #main-content-header {
   display: flex;
   justify-content: flex-end;
@@ -198,11 +198,59 @@ ul {
   margin-right: 20px;
 }
 
-/* main header hover */
+/* main content header:hover */
 #main-content .main-content-header-button:hover {
   transform: scale(1.2); /* Ingrandisce il pulsante del 20% */
   cursor: pointer;
 }
+
+/* MAIN CONTENT */
+#content .content-link ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 10px 5px;
+
+  color: #717171;
+}
+
+#content .content-link ul * {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#content .content-link a {
+  position: relative;
+}
+
+#content .content-link a::after {
+  position: absolute;
+  content: ""; /* Pseudo-elemento vuoto */
+  left: 0; /* Posiziona il centro del ::after */
+  bottom: -5px; /* Altezza sotto il link */
+  transform: translateX(-50%); 
+  width: 0; /* Inizialmente invisibile */
+  height: 3px; /* Altezza del "div" */
+  background-color: rgb(166, 245, 21); /* Colore verde per l'effetto */
+}
+
+
+/* main content:hover */
+#content .content-link a:hover {
+  width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER */
 #player {
